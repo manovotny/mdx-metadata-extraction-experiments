@@ -27,8 +27,8 @@
     "exports": "./index.js",
     "scripts": {
         "check": "npm-check -u",
-        "loader": "node --experimental-loader=@mdx-js/node-loader example/loader.js",
-        "evaluate": "node example/evaluate.js",
+        "loader": "node --experimental-loader=@mdx-js/node-loader scripts/loader.js",
+        "evaluate": "node scripts/evaluate.js",
         "lint-staged": "lint-staged",
         "prettier": "prettier --write --ignore-unknown .",
         "prettier:check": "prettier --check --ignore-unknown .",

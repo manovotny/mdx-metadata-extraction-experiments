@@ -1,0 +1,55 @@
+{
+    "name": "mdx-metadata-extraction-experiments",
+    "description": "TODO",
+    "version": "0.0.0",
+    "author": {
+        "name": "Michael Novotny",
+        "email": "manovotny@gmail.com",
+        "url": "https://manovotny.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/manovotny/mdx-metadata-extraction-experiments.git"
+    },
+    "keywords": [
+        "extract",
+        "markdown",
+        "mdx",
+        "mdx-js",
+        "meta",
+        "metadata"
+    ],
+    "engines": {
+        "node": ">=12.20.0"
+    },
+    "type": "module",
+    "exports": "./index.js",
+    "scripts": {
+        "check": "npm-check -u",
+        "loader": "node --experimental-loader=@mdx-js/node-loader example/loader.js",
+        "evaluate": "node example/evaluate.js",
+        "lint-staged": "lint-staged",
+        "prettier": "prettier --write --ignore-unknown .",
+        "prettier:check": "prettier --check --ignore-unknown .",
+        "test": "npm run prettier:check"
+    },
+    "git": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*": "prettier --write --ignore-unknown"
+    },
+    "dependencies": {
+        "@mdx-js/node-loader": "2.0.0-rc.2",
+        "react": "17.0.2",
+        "xdm": "3.3.4"
+    },
+    "devDependencies": {
+        "@vercel/git-hooks": "1.0.0",
+        "lint-staged": "12.3.2",
+        "npm-check": "5.9.2",
+        "prettier": "2.5.1",
+        "prettier-config-get-off-my-lawn": "1.0.0"
+    }
+}

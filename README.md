@@ -1,1 +1,0 @@
-# mdx-metadata-extraction-experiments

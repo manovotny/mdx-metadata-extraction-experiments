@@ -27,12 +27,13 @@
     "exports": "./index.js",
     "scripts": {
         "check": "npm-check -u",
+        "lint": "eslint . --ext .cjs,.js,.json,.jsx",
         "loader": "node --experimental-loader @node-loader/core scripts/loader.js",
         "evaluate": "node --experimental-loader=./loaders/jsx-loader.js scripts/evaluate.js",
         "lint-staged": "lint-staged",
         "prettier": "prettier --write --ignore-unknown .",
         "prettier:check": "prettier --check --ignore-unknown .",
-        "test": "npm run prettier:check"
+        "test": "npm run lint && npm run prettier:check"
     },
     "git": {
         "pre-commit": "lint-staged"
@@ -49,6 +50,8 @@
     },
     "devDependencies": {
         "@vercel/git-hooks": "1.0.0",
+        "eslint": "8.7.0",
+        "eslint-config-get-off-my-lawn": "7.0.0-beta.7",
         "lint-staged": "12.3.2",
         "npm-check": "5.9.2",
         "prettier": "2.5.1",

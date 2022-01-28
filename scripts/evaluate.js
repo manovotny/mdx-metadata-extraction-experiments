@@ -1,15 +1,14 @@
-import {resolve} from 'node:path';
-import {readFileSync} from 'node:fs';
+import {promises as fs} from 'node:fs';
+import {pathToFileURL} from 'node:url';
 
 import * as runtime from 'react/jsx-runtime.js';
 import {evaluate} from 'xdm';
 
-const path = resolve('./src/pages/index.mdx');
-const contents = readFileSync(path);
-const baseUrl = `file://${path}`;
+const {href, pathname} = pathToFileURL('./src/pages/index.mdx');
+const contents = await fs.readFile(pathname);
 const {meta} = await evaluate(contents, {
     ...runtime,
-    baseUrl,
+    baseUrl: href,
     useDynamicImport: true,
 });
 

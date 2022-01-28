@@ -27,8 +27,8 @@
     "exports": "./index.js",
     "scripts": {
         "check": "npm-check -u",
-        "loader": "node --experimental-loader=@mdx-js/node-loader scripts/loader.js",
-        "evaluate": "node scripts/evaluate.js",
+        "loader": "node --experimental-loader @node-loader/core scripts/loader.js",
+        "evaluate": "node --experimental-loader=./loaders/jsx-loader.js scripts/evaluate.js",
         "lint-staged": "lint-staged",
         "prettier": "prettier --write --ignore-unknown .",
         "prettier:check": "prettier --check --ignore-unknown .",
@@ -42,6 +42,8 @@
     },
     "dependencies": {
         "@mdx-js/node-loader": "2.0.0-rc.2",
+        "@node-loader/core": "2.0.0",
+        "esbuild": "0.14.14",
         "react": "17.0.2",
         "xdm": "3.3.4"
     },
